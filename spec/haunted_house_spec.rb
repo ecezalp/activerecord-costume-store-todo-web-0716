@@ -1,4 +1,5 @@
 require_relative 'spec_helper'
+require 'pry'
 
 describe "HauntedHouse" do
 
@@ -38,6 +39,7 @@ describe "HauntedHouse" do
     {"Fright Fest"=>true, "13th Street Manor"=>false}.each do |name, boolean|
       HauntedHouse.create(name: name, family_friendly: boolean)
     end
+    # binding.pry
     expect(HauntedHouse.find_by(name: "Fright Fest").family_friendly).to eq(true)
     expect(HauntedHouse.find_by(name: "13th Street Manor").family_friendly).to eq(false)
   end

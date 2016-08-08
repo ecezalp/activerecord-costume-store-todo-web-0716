@@ -8,6 +8,7 @@ RSpec.configure do |config|
     DatabaseCleaner.clean_with(:truncation)
     DatabaseCleaner.start
     DatabaseCleaner.clean
+    # system("rake db:rollback")
     system("rake db:migrate")
     DB.tables
   end
